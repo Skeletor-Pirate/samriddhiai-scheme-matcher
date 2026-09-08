@@ -117,6 +117,9 @@ export function recommendSchemes(profile: UserInputProfile): SchemeRecommendatio
     });
   }
 
-  // Sort by highest match score first
-  return recommendations.sort((a, b) => b.matchScore - a.matchScore);
+  // Sort by highest match score first and limit top results to ensure dynamic output
+  return recommendations
+    .filter(rec => rec.matchScore >= 40 || profile.sector === rec.scheme.category)
+    .sort((a, b) => b.matchScore - a.matchScore)
+    .slice(0, 3);
 }
