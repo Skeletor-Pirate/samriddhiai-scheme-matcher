@@ -272,10 +272,18 @@ export const VisualCards: React.FC<VisualCardsProps> = ({
             { val: 2000000, label: '₹20.00 Lakh', descHi: 'उच्च शिक्षा (इंजीनियरिंग)', descEn: 'Higher Education Inland' },
             { val: 5000000, label: '₹50.00 Lakh', descHi: 'बड़ी फैक्ट्री / उद्योग', descEn: 'Factory / Term Loan' }
           ].map((item, index, arr) => {
-            // Find closest cost to highlight visually when voice sets an arbitrary number
+            /**
+             * DYNAMIC VOICE INPUT HIGHLIGHTING LOGIC
+             * 
+             * Voice inputs often contain arbitrary numbers (e.g. "I need 1.2 Lakhs").
+             * Instead of failing to select a visual card because 120000 !== 140000,
+             * we dynamically calculate the absolute difference between the spoken/selected cost 
+             * and our predefined visual buckets. We then snap the visual selection to the closest matching tier.
+             */
             const costs = arr.map(a => a.val);
             const closestCost = costs.reduce((prev, curr) => Math.abs(curr - selectedCost) < Math.abs(prev - selectedCost) ? curr : prev);
             const isSelected = closestCost === item.val;
+            
             return (
               <button
                 key={item.val}

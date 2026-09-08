@@ -117,7 +117,17 @@ export function recommendSchemes(profile: UserInputProfile): SchemeRecommendatio
     });
   }
 
-  // Sort by highest match score first and limit top results to ensure dynamic output
+  /**
+   * DYNAMIC FILTERING & SORTING LOGIC
+   * 
+   * This section ensures that the output is highly dynamic based on user inputs (e.g., from voice).
+   * Instead of returning a static list of all schemes, we:
+   * 1. Filter out schemes that score below a certain threshold (40) unless they are an exact sector match.
+   *    This removes completely irrelevant schemes from the UI.
+   * 2. Sort the remaining eligible schemes by their calculated matchScore in descending order.
+   * 3. Slice the array to only return the Top 3 best matches, ensuring the UI remains focused and 
+   *    updates drastically when inputs like cost, income, or sector change.
+   */
   return recommendations
     .filter(rec => rec.matchScore >= 40 || profile.sector === rec.scheme.category)
     .sort((a, b) => b.matchScore - a.matchScore)
