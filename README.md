@@ -101,19 +101,6 @@ Matches applicant profiles across official NSFDC concessional categories:
 
 ---
 
-## 🔑 Recommended Free-Tier APIs (Zero Cost Deployment)
-
-To power high-volume production deployments at **zero operating cost**, we recommend the following best-in-class free tier APIs:
-
-| Feature Area | Recommended Service | Free Tier Allowance | Why It's the Absolute Best |
-|---|---|---|---|
-| **AI LLM / Scheme Reasoning** | **Google Gemini 1.5 Flash** (via Google AI Studio) | **15 requests/min (RPM)**, **1,500 requests/day (RPD)**, 1M token context (100% Free) | Ultra-fast token latency, exceptional multilingual comprehension (Hindi, Tamil, Marathi, Bengali), and completely free without credit card expiration. |
-| **Alternative AI Reasoning** | **Groq Cloud (Llama 3.3 70B / 8B Versatile)** | **30 RPM / 14,400 requests/day** (Free Tier) | World's fastest inference speed (~300 tokens/sec), perfect for instant voice response generation. |
-| **Interactive Map Tiles** | **CartoDB Voyager / OpenStreetMap** | **Unlimited public vector/raster tiles** (Free) | No API key needed, zero billing surprises, loads crisp map tiles across all Indian pincodes. |
-| **Voice Speech-to-Text & TTS** | **Web Speech API (W3C Standard)** | **100% Free & Unlimited** (Built into browser) | Zero external server latency, works locally on Chrome, Edge, and Android mobile browsers across Indian regional accents. |
-| **Alternative Cloud STT** | **Sarvam AI (Indian Language Speech API)** | Generous free developer credit | Built specifically for 10+ Indian regional languages and dialect variations. |
-
----
 
 ## 💻 Tech Stack
 
