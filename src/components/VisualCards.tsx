@@ -320,10 +320,10 @@ export const VisualCards: React.FC<VisualCardsProps> = ({
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           {[
-            { minVal: 0, maxVal: 150000, label: 'Up to ₹1.5 Lakh', labelHi: '₹1.50 लाख तक (अत्यंत पिछड़ा वर्ग)', status: 'FULL_SUBSIDY' },
-            { minVal: 150001, maxVal: 300000, label: '₹1.5 - ₹3.0 Lakh', labelHi: '₹2.50 लाख (औसत आय)', status: 'FULL_SUBSIDY' },
-            { minVal: 300001, maxVal: 500000, label: '₹3.0 - ₹5.0 Lakh', labelHi: '₹4.50 लाख (रियायती सीमा के भीतर)', status: 'FULL_SUBSIDY' },
-            { minVal: 500001, maxVal: Infinity, label: 'Above ₹5.0 Lakh', labelHi: '₹5 लाख से अधिक (सरकारी सीमा से बाहर)', status: 'OVER_LIMIT' }
+            { minVal: 0, maxVal: 150000, val: 150000, label: 'Up to ₹1.5 Lakh', labelHi: '₹1.50 लाख तक (अत्यंत पिछड़ा वर्ग)', status: 'FULL_SUBSIDY' },
+            { minVal: 150001, maxVal: 300000, val: 250000, label: '₹1.5 - ₹3.0 Lakh', labelHi: '₹2.50 लाख (औसत आय)', status: 'FULL_SUBSIDY' },
+            { minVal: 300001, maxVal: 500000, val: 450000, label: '₹3.0 - ₹5.0 Lakh', labelHi: '₹4.50 लाख (रियायती सीमा के भीतर)', status: 'FULL_SUBSIDY' },
+            { minVal: 500001, maxVal: Infinity, val: 650000, label: 'Above ₹5.0 Lakh', labelHi: '₹5 लाख से अधिक (सरकारी सीमा से बाहर)', status: 'OVER_LIMIT' }
           ].map((tier, index) => {
             const isSelected = selectedIncomeTier >= tier.minVal && selectedIncomeTier <= tier.maxVal;
             const isEligible = tier.status === 'FULL_SUBSIDY';
